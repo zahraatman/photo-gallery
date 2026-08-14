@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 function App() {
+  const [search, setSearch] = useState("");
+
   const photos = [
     {
       id: 1,
@@ -32,12 +36,24 @@ function App() {
     },
   ];
 
+  const filteredPhotos = photos.filter((photo) =>
+    photo.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="app">
       <h1 className="gallery-title">My Photo Gallery</h1>
 
+      <input
+        type="text"
+        placeholder="Search a photo..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="search-bar"
+      />
+
       <div className="gallery">
-        {photos.map((photo) => (
+        {filteredPhotos.map((photo) => (
           <div className="photo-card" key={photo.id}>
             <img src={photo.image} alt={photo.title} />
             <p>{photo.title}</p>
