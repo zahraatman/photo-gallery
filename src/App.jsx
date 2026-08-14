@@ -19,12 +19,11 @@ function App() {
       title: "La Casbah d'Alger",
       image: "/images/casbah.jpg",
     },
-    {
-      id: 4,
-      title: "Maqam Echahid",
-      image: "/images/maqam-echahid.jpg",
-    },
-    {
+{
+  id: 4,
+  title: "Maqam Echahid",
+  image: "/images/maqam-echahid.jpg",
+},    {
       id: 5,
       title: "Port d'Alger",
       image: "/images/port-alger.jpg",
